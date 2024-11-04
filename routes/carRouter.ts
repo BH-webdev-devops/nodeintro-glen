@@ -7,7 +7,7 @@ const carRouter = Router();
 
 carRouter.get('/cars', carController.getCars)
 carRouter.get('/cars/:id', carController.getCarById)
-carRouter.post('/cars/', carController.createNewCar)
+carRouter.post('/cars/', checkCarData, carController.createNewCar)
 carRouter.put('/cars/:id', checkCarData,  carController.updateCar)
 carRouter.delete('/cars/:id', carController.deleteCar)
 
