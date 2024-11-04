@@ -34,13 +34,18 @@ export const carController = {
         res.json(cars)
     },
 
-    updateCar: (req: Request, res: Response) => {
+    updateCar: (req: Request, res: Response) : any => {
         const carToUpdateId = parseInt(req.params.id);
         const { brand, year, model } = req.body;
     
         let carToUpdate = cars.find((car) => car.id === carToUpdateId);
     
         try {
+
+            // if (!brand || !year || !model) {
+            //     return res.json({message: "Please provide information about the car!"})
+            // }
+
             if (carToUpdate) {
                 carToUpdate.brand = brand;
                 carToUpdate.year = year;
