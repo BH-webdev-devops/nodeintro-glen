@@ -21,7 +21,7 @@ const secondMiddleware = (req: Request, res: Response, next: NextFunction) => {
 }
 
 app.get('/', middleware, secondMiddleware, (req: Request, res: Response) => {
-    res.send('Welcome to my API')
+    res.send('Welcome to my API!')
 }); 
 
-app.listen(3002, () => console.log(`Server is running on port ${PORT}`))   
+app.listen(3002, () => console.log(`Server is running on port ${PORT}`)) 
